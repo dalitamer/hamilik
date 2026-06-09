@@ -158,6 +158,11 @@ AhiEvran/
   - `AhiEvran` was not its own git repository; it was only an untracked folder inside parent repo `C:\Users\Durmu`.
   - Target repository `dalitamer/hamilik` is empty and accessible.
   - Publish plan: initialize independent git repo in `AhiEvran`, commit project files on `main`, push to `origin`.
+- GitHub publish result:
+  - Independent git repo initialized in `AhiEvran`.
+  - Remote `origin` set to `https://github.com/dalitamer/hamilik.git`.
+  - Initial commit pushed to `main`: `50cf558 Initial Hamilik Okulu website`.
+  - Branch `main` tracks `origin/main`.
 
 ## Known Constraint
 - The application form is frontend-only. It validates locally and shows a success state, but there is no backend submission endpoint yet.
