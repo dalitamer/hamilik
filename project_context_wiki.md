@@ -7,6 +7,7 @@
 - Theme: polished minimalist light theme, Hamilik/Ahi Evran blue-green-gold palette, corporate but fluid UI, smooth purposeful animations.
 - Rule: keep this file updated after each development/check step and use it as project memory.
 - GitHub target remote: `https://github.com/dalitamer/hamilik.git`
+- Production URL: `https://hamilik.onrender.com/`
 
 ## Active Architecture
 ```txt
@@ -14,7 +15,7 @@ AhiEvran/
 ├─ index.html
 ├─ program-detayi.html
 ├─ katilim-formu.html
-├─ Assets/
+├─ assets/
 │  ├─ styles.css
 │  ├─ home.css
 │  ├─ detail.css
@@ -35,6 +36,7 @@ AhiEvran/
 │  └─ visual-ahievran-tanitim.jpg
 ├─ Docs/
 │  └─ Yolda Birlik Rapor.pdf
+├─ render.yaml
 └─ project_context_wiki.md
 ```
 
@@ -59,7 +61,7 @@ AhiEvran/
   - Detail journey section.
   - Report-integrated "Yolda Birlik Kurgusu" section.
   - Sticky/fixed module navigation with active module scrollspy.
-  - 8 rendered module detail cards from `Assets/detail.js`.
+  - 8 rendered module detail cards from `assets/detail.js`.
   - Program structure accordion.
   - Report-derived application flow section.
   - Application model.
@@ -100,21 +102,21 @@ AhiEvran/
   - Modül 5: Dijital Perde
   - Modül 6: Duruş ve Değerler
   - Modül 7: Kapanış, Mezuniyet ve Etki Takibi
-- `Assets/home.js` drives the home module carousel.
-- `Assets/detail.js` renders the detailed module cards.
+- `assets/home.js` drives the home module carousel.
+- `assets/detail.js` renders the detailed module cards.
 
-## Active Assets
+## Active assets
 - Required CSS: `styles.css`, `home.css`, `detail.css`, `form.css`, `experience.css`.
 - Required JS: `site.js`, `home.js`, `detail.js`, `form.js`, `experience.js`.
 - Required images:
-  - `Assets/hamilik-logo.png`
-  - `Assets/ahievran-logo.png`
-  - `Assets/hamilik-logo-header.png`
-  - `Assets/ahievran-logo-header.png`
-  - `Assets/visual-hamilik-kesif.jpeg`
-  - `Assets/visual-hamilik-basvuru.jpg`
-  - `Assets/visual-ahievran-tanitim.jpg`
-  - `Assets/visual-ahievran-photo-contest.jpg`
+  - `assets/hamilik-logo.png`
+  - `assets/ahievran-logo.png`
+  - `assets/hamilik-logo-header.png`
+  - `assets/ahievran-logo-header.png`
+  - `assets/visual-hamilik-kesif.jpeg`
+  - `assets/visual-hamilik-basvuru.jpg`
+  - `assets/visual-ahievran-tanitim.jpg`
+  - `assets/visual-ahievran-photo-contest.jpg`
 - Internal source document:
   - `Docs/Yolda Birlik Rapor.pdf`
 
@@ -133,12 +135,12 @@ AhiEvran/
 ## Removed As Unnecessary
 - `uploads/`: duplicate logos, duplicate PDFs, and pasted image artifacts.
 - `dist/`: generated static export duplicating the source tree.
-- `Assets/image-slot.js`: unused external scaffold not imported by any active page.
+- `assets/image-slot.js`: unused external scaffold not imported by any active page.
 
 ## Current Verification State
 - `node --check` passes for all active JS files.
 - Dev server responds at `http://127.0.0.1:8000/`.
-- HTTP 200 returned for `index.html`, `program-detayi.html`, `katilim-formu.html`, `Assets/detail.css`, and new real visual assets.
+- HTTP 200 returned for `index.html`, `program-detayi.html`, `katilim-formu.html`, `assets/detail.css`, and new real visual assets.
 - Static scan found no active `href="Docs/Yolda...` report links in the three HTML pages.
 - Chrome CDP QA:
   - mobile `390px`: `scrollWidth = 390`, `bodyScrollWidth = 390`.
@@ -154,6 +156,14 @@ AhiEvran/
   - Home visual gallery uses `visual-ahievran-tanitim.jpg`, `visual-hamilik-kesif.jpeg`, and `visual-ahievran-photo-contest.jpg`.
   - Program detail module nav now switches to fixed mode inside module scope; CDP check while scrolled to `#m3` returned `modnavPosition = fixed`, `modnavTop = 74`, `modnavVisible = true`, active button `Modül 3`.
   - Latest CDP mobile home check returned `scrollWidth = 390`.
+- Production fix after Render issue:
+  - Asset directory was renamed from `Assets/` to lowercase `assets/` and all HTML references were updated to avoid Linux/static-host case sensitivity issues.
+  - Render config added in `render.yaml` with static publish path `.`.
+  - Home copy was revised:
+    - Removed `Bir web sayfası değil, sakin bir gelişim yolculuğu.`
+    - Removed `Gerçek kurumsal görsellerle yaşayan bir program dili.`
+    - Replaced with program-specific institutional language.
+  - Mojibake introduced during bulk path rewrite was repaired across HTML/JS/CSS/wiki files.
 - GitHub publish prep:
   - `AhiEvran` was not its own git repository; it was only an untracked folder inside parent repo `C:\Users\Durmu`.
   - Target repository `dalitamer/hamilik` is empty and accessible.
@@ -166,3 +176,4 @@ AhiEvran/
 
 ## Known Constraint
 - The application form is frontend-only. It validates locally and shows a success state, but there is no backend submission endpoint yet.
+

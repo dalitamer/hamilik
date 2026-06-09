@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: hamilik
+    runtime: static
+    repo: https://github.com/dalitamer/hamilik
+    branch: main
+    buildCommand: ""
+    staticPublishPath: .
+    routes:
+      - type: rewrite
+        source: /program-detayi
+        destination: /program-detayi.html
+      - type: rewrite
+        source: /katilim-formu
+        destination: /katilim-formu.html
