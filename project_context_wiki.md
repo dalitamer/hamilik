@@ -164,6 +164,12 @@ AhiEvran/
     - Removed `Gerçek kurumsal görsellerle yaşayan bir program dili.`
     - Replaced with program-specific institutional language.
   - Mojibake introduced during bulk path rewrite was repaired across HTML/JS/CSS/wiki files.
+  - Pushed fix commit: `f0fc43c Fix Render static asset paths`.
+  - Live verification after Render deploy:
+    - `https://hamilik.onrender.com/assets/site.js` returns HTTP 200 with `application/javascript`.
+    - `https://hamilik.onrender.com/assets/styles.css` returns HTTP 200 with `text/css`.
+    - `program-detayi.html` and `katilim-formu.html` return HTTP 200.
+    - Removed copy is absent from live homepage; replacement program-specific headings are present.
 - GitHub publish prep:
   - `AhiEvran` was not its own git repository; it was only an untracked folder inside parent repo `C:\Users\Durmu`.
   - Target repository `dalitamer/hamilik` is empty and accessible.
