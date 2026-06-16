@@ -137,18 +137,18 @@ section { position: relative; }
 }
 .brand .ahi { height: 62px; }
 .nav.shrink .brand .ahi { height: 48px; }
+.brand .katki {
+  height: 50px;
+  max-width: 176px;
+  object-fit: contain;
+}
+.nav.shrink .brand .katki { height: 40px; max-width: 142px; }
 .brand-title {
   display: flex; flex-direction: column; justify-content: center;
   max-width: 190px; color: var(--blue-ink);
   font-family: 'Manrope', system-ui, sans-serif; font-weight: 800; font-size: 13.5px; line-height: 1.12;
   letter-spacing: 0;
 }
-.brand-title::before {
-  content: 'Hamilik Okulu';
-  color: var(--blue);
-  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 3px;
-}
-
 .nav-links { display: flex; align-items: center; gap: 6px; }
 .nav-links a {
   font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15.5px;
@@ -315,7 +315,7 @@ section { position: relative; }
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width: 980px) {
+@media (max-width: 1240px) {
   .nav-links, .nav .btn.desk { display: none; }
   .burger { display: flex; }
   .mobile-cta { display: block; }
@@ -330,12 +330,13 @@ section { position: relative; }
   .brand img { height: 34px; }
   .brand .ham { height: 24px; }
   .brand .ahi { height: 40px; }
+  .brand .katki { height: 30px; max-width: 94px; }
   .nav.shrink .brand img { height: 30px; }
   .nav.shrink .brand .ham { height: 22px; }
   .nav.shrink .brand .ahi { height: 34px; }
+  .nav.shrink .brand .katki { height: 26px; max-width: 82px; }
   .brand { gap: 8px; }
   .brand .x { font-size: 16px; }
-  .brand-title { max-width: 132px; font-size: 11px; line-height: 1.08; }
-  .brand-title::before { font-size: 8px; margin-bottom: 2px; }
+  .brand-title { max-width: 118px; font-size: 10px; line-height: 1.08; }
   .nav .wrap { gap: 12px; }
 }

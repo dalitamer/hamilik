@@ -4,6 +4,7 @@
 - Workspace: `c:\Users\Durmu\Desktop\AhiEvran`
 - Static 3-page HTML/CSS/JS website for **Hamilik Okulu Kırşehir Programı**.
 - Partnership: Hamilik Okulu Vakfı x Kırşehir Ahi Evran Üniversitesi.
+- Header institutions: Hamilik Okulu Vakfı, Kırşehir Ahi Evran Üniversitesi, and Toplumsal Katkı Koordinatörlüğü.
 - Theme: polished minimalist light theme, Hamilik/Ahi Evran blue-green-gold palette, corporate but fluid UI, smooth purposeful animations.
 - Rule: keep this file updated after each development/check step and use it as project memory.
 - GitHub target remote: `https://github.com/dalitamer/hamilik.git`
@@ -13,13 +14,16 @@
 ```txt
 AhiEvran/
 ├─ index.html
+├─ hamilik-okulu-nedir.html
 ├─ program-detayi.html
 ├─ katilim-formu.html
+├─ iletisim.html
 ├─ assets/
 │  ├─ styles.css
 │  ├─ home.css
 │  ├─ detail.css
 │  ├─ form.css
+│  ├─ info.css
 │  ├─ experience.css
 │  ├─ site.js
 │  ├─ home.js
@@ -30,6 +34,7 @@ AhiEvran/
 │  ├─ ahievran-logo.png
 │  ├─ hamilik-logo-header.png
 │  ├─ ahievran-logo-header.png
+│  ├─ toplumsal-katki-logo.png
 │  ├─ visual-hamilik-kesif.jpeg
 │  ├─ visual-hamilik-basvuru.jpg
 │  ├─ visual-ahievran-photo-contest.jpg
@@ -52,6 +57,10 @@ AhiEvran/
   - Outcomes mosaic.
   - 2-year journey timeline.
   - CTA, institution cards, footer, mobile sticky CTA.
+- `hamilik-okulu-nedir.html`
+  - New informational page explaining Hamilik Okulu using official Hamilik Okulu sources.
+  - Covers hamilik meaning, ahilik/futuvvet roots, vakif founding purpose, program model, and Kirsehir program connection.
+  - Includes official source links to Hamilik Nedir, Tarihcemiz, and Hamilik Okulu Programi pages.
 - `program-detayi.html`
   - Navbar with larger cropped institution logos and `Hamilik Okulu Kırşehir Programı` brand title.
   - Program detail hero.
@@ -74,6 +83,9 @@ AhiEvran/
   - Frontend validation form.
   - Success state.
   - Footer and mobile sticky CTA.
+- `iletisim.html`
+  - New standalone contact page using official Hamilik Okulu contact details.
+  - Includes email, phone numbers, full Istanbul address, official contact page link, institutional links, and social links.
 
 ## Report Integration Decision
 - There is **no separate report page** and no active site link to the internal report PDF.
@@ -103,13 +115,14 @@ AhiEvran/
 - `assets/detail.js` renders the detailed module cards.
 
 ## Active assets
-- Required CSS: `styles.css`, `home.css`, `detail.css`, `form.css`, `experience.css`.
+- Required CSS: `styles.css`, `home.css`, `detail.css`, `form.css`, `info.css`, `experience.css`.
 - Required JS: `site.js`, `home.js`, `detail.js`, `form.js`, `experience.js`.
 - Required images:
   - `assets/hamilik-logo.png`
   - `assets/ahievran-logo.png`
   - `assets/hamilik-logo-header.png`
   - `assets/ahievran-logo-header.png`
+  - `assets/toplumsal-katki-logo.png` (temporary placeholder logo)
   - `assets/visual-hamilik-kesif.jpeg`
   - `assets/visual-hamilik-basvuru.jpg`
   - `assets/visual-ahievran-tanitim.jpg`
@@ -187,6 +200,23 @@ AhiEvran/
   - Changed visible program duration copy to 2 years across active pages and this wiki.
   - Removed now-unused participation-conditions CSS from `assets/form.css`.
   - Verification scan found no remaining old participation-conditions, old-duration, fixed-capacity, or evaluation-contact phrases in active project copy.
+- Latest header cleanup:
+  - Removed the small generated header eyebrow above the brand title in `assets/styles.css`, so the logo/header area no longer shows an extra `Hamilik Okulu` label.
+- Latest page additions:
+  - Added `hamilik-okulu-nedir.html` as a dedicated Hamilik Okulu explainer page with official-source links.
+  - Added `iletisim.html` as a standalone contact page with official address, phone, email, and social/website links.
+  - Added `assets/info.css` for shared informational/contact page layouts.
+  - Updated nav and mobile menus on all active pages to include the new explainer and contact pages.
+  - Updated footer page/kurumsal link lists on all active pages.
+  - Changed the shared desktop-to-mobile nav breakpoint to `1080px` so the expanded navigation stays clean.
+  - Local static server check returned HTTP 200 for all five HTML pages plus `assets/styles.css` and `assets/info.css`.
+  - Local link/asset scan found no missing relative `href` or `src` targets.
+  - `node --check` and `git diff --check` passed; in-app browser visual QA could not run because the Browser plugin did not expose an `iab` browser in this session.
+- Latest header logo update:
+  - Added a third header logo for `Toplumsal Katkı Koordinatörlüğü` across all active HTML pages.
+  - Generated temporary transparent PNG asset at `assets/toplumsal-katki-logo.png`.
+  - Added responsive sizing for the new `.katki` logo in `assets/styles.css`.
+  - Updated shared nav breakpoint to `1240px` so the expanded logo/header area does not crowd desktop navigation.
 
 ## Known Constraint
 - The application form is frontend-only. It validates locally and shows a success state, but there is no backend submission endpoint yet.
