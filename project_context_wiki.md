@@ -34,8 +34,6 @@ AhiEvran/
 │  ├─ visual-hamilik-basvuru.jpg
 │  ├─ visual-ahievran-photo-contest.jpg
 │  └─ visual-ahievran-tanitim.jpg
-├─ Docs/
-│  └─ Yolda Birlik Rapor.pdf
 ├─ render.yaml
 └─ project_context_wiki.md
 ```
@@ -52,14 +50,14 @@ AhiEvran/
   - Animated program info slider.
   - Animated horizontal module carousel.
   - Outcomes mosaic.
-  - 1.5-year journey timeline.
+  - 2-year journey timeline.
   - CTA, institution cards, footer, mobile sticky CTA.
 - `program-detayi.html`
   - Navbar with larger cropped institution logos and `Hamilik Okulu Kırşehir Programı` brand title.
   - Program detail hero.
   - Summary cards.
   - Detail journey section.
-  - Report-integrated "Yolda Birlik Kurgusu" section.
+  - Report-integrated program framework section.
   - Sticky/fixed module navigation with active module scrollspy.
   - 8 rendered module detail cards from `assets/detail.js`.
   - Program structure accordion.
@@ -71,7 +69,6 @@ AhiEvran/
 - `katilim-formu.html`
   - Navbar with larger cropped institution logos and `Hamilik Okulu Kırşehir Programı` brand title.
   - Application hero.
-  - Participation conditions.
   - Application journey section.
   - Info panel.
   - Frontend validation form.
@@ -79,8 +76,8 @@ AhiEvran/
   - Footer and mobile sticky CTA.
 
 ## Report Integration Decision
-- There is **no separate report page** and no active site link to `Docs/Yolda Birlik Rapor.pdf`.
-- The PDF remains in `Docs/` only as an internal content/source document.
+- There is **no separate report page** and no active site link to the internal report PDF.
+- The old internal report PDF was removed because its filename/metadata contained disallowed wording.
 - Report content is now integrated into `program-detayi.html`:
   - project definition and rationale,
   - inner meaning search,
@@ -90,7 +87,7 @@ AhiEvran/
   - stance/values,
   - communication/expression,
   - experience-based learning through seminar, workshop, trip, reading, mentoring, and reflection.
-- The report's broader 2-year study frame is presented as adapted into the current 1.5-year first-implementation program.
+- The program is presented as a 2-year process with limited capacity language instead of fixed participant-count copy.
 
 ## Module Model
 - The site presents 8 program headings consistently:
@@ -117,8 +114,7 @@ AhiEvran/
   - `assets/visual-hamilik-basvuru.jpg`
   - `assets/visual-ahievran-tanitim.jpg`
   - `assets/visual-ahievran-photo-contest.jpg`
-- Internal source document:
-  - `Docs/Yolda Birlik Rapor.pdf`
+- No report PDF is kept in the active project tree.
 
 ## Official Links And Contact
 - Hamilik Okulu: `https://hamilikokulu.org/`
@@ -141,7 +137,7 @@ AhiEvran/
 - `node --check` passes for all active JS files.
 - Dev server responds at `http://127.0.0.1:8000/`.
 - HTTP 200 returned for `index.html`, `program-detayi.html`, `katilim-formu.html`, `assets/detail.css`, and new real visual assets.
-- Static scan found no active `href="Docs/Yolda...` report links in the three HTML pages.
+- Static scan found no active report PDF links in the three HTML pages.
 - Chrome CDP QA:
   - mobile `390px`: `scrollWidth = 390`, `bodyScrollWidth = 390`.
   - desktop `1440px`: `scrollWidth = 1425`, `bodyScrollWidth = 1425`.
@@ -179,6 +175,18 @@ AhiEvran/
   - Remote `origin` set to `https://github.com/dalitamer/hamilik.git`.
   - Initial commit pushed to `main`: `50cf558 Initial Hamilik Okulu website`.
   - Branch `main` tracks `origin/main`.
+- Latest copy cleanup:
+  - Removed the disallowed phrase from header/logo pseudo text in `assets/styles.css`.
+  - Replaced hero eyebrow pseudo text in `assets/experience.css` with `Kırşehir Programı`.
+  - Removed the internal source PDF because its embedded metadata still contained the disallowed phrase after filename cleanup.
+  - Updated this context wiki so the disallowed phrase is not present in project text.
+- Latest participation form/program copy cleanup:
+  - Removed the full participation conditions section from `katilim-formu.html`.
+  - Removed application-after-evaluation contact copy, including matching meta/hero/success-panel text.
+  - Changed visible fixed-capacity copy from 30-person/30-student language to limited-capacity language across active pages.
+  - Changed visible program duration copy to 2 years across active pages and this wiki.
+  - Removed now-unused participation-conditions CSS from `assets/form.css`.
+  - Verification scan found no remaining old participation-conditions, old-duration, fixed-capacity, or evaluation-contact phrases in active project copy.
 
 ## Known Constraint
 - The application form is frontend-only. It validates locally and shows a success state, but there is no backend submission endpoint yet.

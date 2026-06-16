@@ -16,17 +16,6 @@
 .fhero-mini .m b { font-family: 'Manrope'; font-weight: 700; color: var(--blue-ink); }
 .fhero-mini .m span { color: var(--muted); font-size: 14px; }
 
-/* ---------- ŞARTLAR ---------- */
-.reqs { padding: 20px 0 70px; }
-.reqs-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 16px; }
-.req {
-  background: #fff; border: 1px solid var(--border); border-radius: var(--r-md); padding: 22px;
-  display: flex; flex-direction: column; gap: 12px; transition: 0.3s var(--ease);
-}
-.req:hover { transform: translateY(-5px); box-shadow: var(--sh-md); border-color: var(--green); }
-.req .rcheck { width: 38px; height: 38px; border-radius: 11px; background: var(--green-pale); color: var(--green-deep); display: grid; place-items: center; flex: none; }
-.req p { font-size: 14.5px; font-weight: 500; color: var(--ink); }
-
 /* ---------- MAIN: panel + form ---------- */
 .formmain { padding: 20px 0 90px; }
 .fm-grid { display: grid; grid-template-columns: 0.78fr 1.22fr; gap: 32px; align-items: start; }
