@@ -20,7 +20,7 @@
     }, 220);
   }
   function nextHero() { goHero(cur + 1); }
-  function startTimer() { stopTimer(); timer = setInterval(nextHero, 7000); }
+  function startTimer() { stopTimer(); timer = setInterval(nextHero, 10000); }
   function stopTimer() { if (timer) clearInterval(timer); }
 
   dots.forEach(function (d) { d.addEventListener('click', function () { goHero(+d.dataset.go); startTimer(); }); });

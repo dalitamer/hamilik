@@ -46,7 +46,7 @@ AhiEvran/
 ## Page Coverage
 - `index.html`
   - Navbar with larger cropped institution logos and `Hamilik Okulu Kırşehir Programı` brand title.
-  - 2 hero poster slides.
+  - 3 hero poster slides.
   - First hero now uses a real visual cover composition with Ahi Evran University and Hamilik Okulu visuals.
   - Real visual story/gallery section.
   - Partnership band.
@@ -217,6 +217,11 @@ AhiEvran/
   - Generated temporary transparent PNG asset at `assets/toplumsal-katki-logo.png`.
   - Added responsive sizing for the new `.katki` logo in `assets/styles.css`.
   - Updated shared nav breakpoint to `1240px` so the expanded logo/header area does not crowd desktop navigation.
+- Latest home hero update:
+  - Added a third homepage hero slide for `Hamilik Okulu Nedir?` linking to `hamilik-okulu-nedir.html`.
+  - Changed homepage hero auto-rotation interval from 7 seconds to 10 seconds in `assets/home.js`.
+  - Increased desktop hero minimum height and adjusted hero spacing in `assets/home.css` so CTA buttons are not clipped vertically.
+  - Added responsive `hamilik-brief` card styling for the third hero slide.
 
 ## Known Constraint
 - The application form is frontend-only. It validates locally and shows a success state, but there is no backend submission endpoint yet.
