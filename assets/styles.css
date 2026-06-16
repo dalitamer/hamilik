@@ -137,12 +137,13 @@ section { position: relative; }
 }
 .brand .ahi { height: 62px; }
 .nav.shrink .brand .ahi { height: 48px; }
-.brand .katki {
-  height: 50px;
-  max-width: 176px;
-  object-fit: contain;
+.brand .katki-text {
+  display: flex; align-items: center;
+  max-width: 132px; color: var(--blue-ink);
+  font-family: 'Manrope', system-ui, sans-serif; font-weight: 800; font-size: 12px; line-height: 1.18;
+  letter-spacing: 0;
 }
-.nav.shrink .brand .katki { height: 40px; max-width: 142px; }
+.nav.shrink .brand .katki-text { font-size: 11px; max-width: 120px; }
 .brand-title {
   display: flex; flex-direction: column; justify-content: center;
   max-width: 190px; color: var(--blue-ink);
@@ -330,11 +331,11 @@ section { position: relative; }
   .brand img { height: 34px; }
   .brand .ham { height: 24px; }
   .brand .ahi { height: 40px; }
-  .brand .katki { height: 30px; max-width: 94px; }
+  .brand .katki-text { font-size: 9.5px; max-width: 84px; line-height: 1.12; }
   .nav.shrink .brand img { height: 30px; }
   .nav.shrink .brand .ham { height: 22px; }
   .nav.shrink .brand .ahi { height: 34px; }
-  .nav.shrink .brand .katki { height: 26px; max-width: 82px; }
+  .nav.shrink .brand .katki-text { font-size: 9px; max-width: 76px; }
   .brand { gap: 8px; }
   .brand .x { font-size: 16px; }
   .brand-title { max-width: 118px; font-size: 10px; line-height: 1.08; }
