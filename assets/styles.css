@@ -1,5 +1,5 @@
 /* ============================================================
-   Hamilik Okulu Kırşehir Programı — Shared Stylesheet
+   Kırşehir Hamilik Okulu — Shared Stylesheet
    Manrope (headings) + Inter (body)
    ============================================================ */
 
@@ -126,7 +126,7 @@ section { position: relative; }
 
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
-.brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.brand { display: flex; align-items: center; gap: 14px; min-width: 0; order: 3; }
 .brand img { height: 54px; width: auto; transition: height 0.4s var(--ease); }
 .brand .ham { height: 40px; }
 .nav.shrink .brand img { height: 42px; }
@@ -144,13 +144,8 @@ section { position: relative; }
   letter-spacing: 0;
 }
 .nav.shrink .brand .katki-text { font-size: 11px; max-width: 120px; }
-.brand-title {
-  display: flex; flex-direction: column; justify-content: center;
-  max-width: 190px; color: var(--blue-ink);
-  font-family: 'Manrope', system-ui, sans-serif; font-weight: 800; font-size: 13.5px; line-height: 1.12;
-  letter-spacing: 0;
-}
-.nav-links { display: flex; align-items: center; gap: 6px; }
+.nav-links { display: flex; align-items: center; gap: 6px; order: 1; margin-right: auto; }
+.nav .btn.desk { order: 2; }
 .nav-links a {
   font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15.5px;
   color: var(--ink); padding: 10px 16px; border-radius: 100px;
@@ -189,7 +184,7 @@ section { position: relative; }
 /* Hamburger */
 .burger {
   display: none; flex-direction: column; gap: 5px; background: none; border: none;
-  cursor: pointer; padding: 8px;
+  cursor: pointer; padding: 8px; order: 1; margin-right: auto;
 }
 .burger span { width: 24px; height: 2.5px; background: var(--blue-ink); border-radius: 2px; transition: 0.3s var(--ease); }
 .burger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
@@ -338,6 +333,5 @@ section { position: relative; }
   .nav.shrink .brand .katki-text { font-size: 9px; max-width: 76px; }
   .brand { gap: 8px; }
   .brand .x { font-size: 16px; }
-  .brand-title { max-width: 118px; font-size: 10px; line-height: 1.08; }
   .nav .wrap { gap: 12px; }
 }

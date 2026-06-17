@@ -2,7 +2,7 @@
 
 ## Current Project
 - Workspace: `c:\Users\Durmu\Desktop\AhiEvran`
-- Static 3-page HTML/CSS/JS website for **Hamilik Okulu Kırşehir Programı**.
+- Static 5-page HTML/CSS/JS website for **Kırşehir Hamilik Okulu**.
 - Partnership: Hamilik Okulu Vakfı x Kırşehir Ahi Evran Üniversitesi.
 - Header institutions: Hamilik Okulu Vakfı, Kırşehir Ahi Evran Üniversitesi, and Toplumsal Katkı Koordinatörlüğü.
 - Theme: polished minimalist light theme, Hamilik/Ahi Evran blue-green-gold palette, corporate but fluid UI, smooth purposeful animations.
@@ -45,7 +45,7 @@ AhiEvran/
 
 ## Page Coverage
 - `index.html`
-  - Navbar with larger cropped institution logos and `Hamilik Okulu Kırşehir Programı` brand title.
+  - Navbar: page links on the left, institution logos (Hamilik Okulu, Ahi Evran) plus a `Toplumsal Katkı Koordinatörlüğü` text label on the right; no brand title.
   - 3 hero poster slides.
   - First hero now uses a real visual cover composition with Ahi Evran University and Hamilik Okulu visuals.
   - Real visual story/gallery section.
@@ -62,7 +62,7 @@ AhiEvran/
   - Covers hamilik meaning, ahilik/futuvvet roots, vakif founding purpose, program model, and Kirsehir program connection.
   - Includes official source links to Hamilik Nedir, Tarihcemiz, and Hamilik Okulu Programi pages.
 - `program-detayi.html`
-  - Navbar with larger cropped institution logos and `Hamilik Okulu Kırşehir Programı` brand title.
+  - Navbar: page links on the left, institution logos (Hamilik Okulu, Ahi Evran) plus a `Toplumsal Katkı Koordinatörlüğü` text label on the right; no brand title.
   - Program detail hero.
   - Summary cards.
   - Detail journey section.
@@ -76,7 +76,7 @@ AhiEvran/
   - Real institutional visuals section.
   - CTA, footer, mobile sticky CTA.
 - `katilim-formu.html`
-  - Navbar with larger cropped institution logos and `Hamilik Okulu Kırşehir Programı` brand title.
+  - Navbar: page links on the left, institution logos (Hamilik Okulu, Ahi Evran) plus a `Toplumsal Katkı Koordinatörlüğü` text label on the right; no brand title.
   - Application hero.
   - Application journey section.
   - Info panel.
@@ -222,6 +222,13 @@ AhiEvran/
   - Changed homepage hero auto-rotation interval from 7 seconds to 10 seconds in `assets/home.js`.
   - Increased desktop hero minimum height and adjusted hero spacing in `assets/home.css` so CTA buttons are not clipped vertically.
   - Added responsive `hamilik-brief` card styling for the third hero slide.
+
+- Latest brand/header restructure:
+  - Renamed the program brand from `Hamilik Okulu Kırşehir Programı` to `Kırşehir Hamilik Okulu` across all page titles, meta, headings, body copy, and footers.
+  - Updated the hero eyebrow pseudo text in `assets/experience.css` to `Kırşehir Hamilik Okulu` and the `hamilik-okulu-nedir.html` CTA to `Kırşehir Hamilik Okulu'nu İncele`.
+  - Replaced the `Toplumsal Katkı Koordinatörlüğü` header logo image with a `.katki-text` text label across all active pages; `assets/toplumsal-katki-logo.png` is now unused.
+  - Removed the `Hamilik Okulu Kırşehir Programı` brand title from the header on all pages (the name still appears in page copy).
+  - Reordered the navbar via CSS `order`/`margin` so page links sit on the left and the institution logos sit on the right (burger stays left on mobile).
 
 ## Known Constraint
 - The application form is frontend-only. It validates locally and shows a success state, but there is no backend submission endpoint yet.

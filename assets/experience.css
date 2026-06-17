@@ -155,7 +155,7 @@ body::after {
 .hero-copy::before,
 .dhero-grid > .reveal::before,
 .fhero .wrap::before {
-  content: "Kırşehir Programı";
+  content: "Kırşehir Hamilik Okulu";
   display: inline-flex;
   align-items: center;
   width: fit-content;
