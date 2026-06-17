@@ -145,7 +145,7 @@ section { position: relative; }
 }
 .nav.shrink .brand .katki-text { font-size: 11px; max-width: 120px; }
 .nav-links { display: flex; align-items: center; gap: 6px; order: 1; margin-right: auto; }
-.nav .btn.desk { order: 2; }
+.nav .btn.desk { order: 4; }
 .nav-links a {
   font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15.5px;
   color: var(--ink); padding: 10px 16px; border-radius: 100px;
