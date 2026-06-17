@@ -52,7 +52,6 @@ AhiEvran/
   - Program introduction and value map.
   - Animated program info slider.
   - Animated horizontal module carousel.
-  - Outcomes mosaic.
   - 2-year journey timeline.
   - CTA, institution cards, footer, mobile sticky CTA.
 - `hamilik-okulu-nedir.html`
@@ -229,7 +228,7 @@ AhiEvran/
   - Reordered the navbar via CSS `order`/`margin` so page links sit on the left and the institution logos sit on the right (burger stays left on mobile).
 
 - Latest homepage trim and hero fix:
-  - Removed the `home-visual-story` section (visual story/gallery) and the `experience-path` journey section from `index.html`; the partner band and program intro remain.
+  - Removed the `home-visual-story` section (visual story/gallery), the `experience-path` journey section, and the `outcomes` mosaic section (`Program Katılımcıya Ne Kazandırır?`) from `index.html`; the partner band and program intro remain.
   - Fixed clipped descenders on the home hero gradient heading in `assets/home.css` (loosened `line-height` and added bottom padding/negative margin on `.hero h1 .grad`).
   - The home hero `<h1>` still reads `Hamilik Okulu Kırşehir Programı` (per-word reveal markup); short brand `Kırşehir Hamilik Okulu` is used in the eyebrow, nav, page titles, and copy.
 
