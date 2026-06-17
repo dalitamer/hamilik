@@ -31,10 +31,11 @@
 
 .hero-copy { position: relative; z-index: 4; max-width: 600px; }
 .hero h1 {
-  font-size: clamp(38px, 5vw, 62px); line-height: 1.04; margin: 0;
+  font-size: clamp(38px, 5vw, 62px); line-height: 1.1; margin: 0;
 }
 .hero h1 .grad {
   background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent;
+  padding-bottom: 0.12em; margin-bottom: -0.12em;
 }
 .hero .lead { color: var(--muted); font-size: clamp(17px, 1.5vw, 20px); margin-top: 22px; max-width: 540px; }
 .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }

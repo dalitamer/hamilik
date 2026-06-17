@@ -48,9 +48,7 @@ AhiEvran/
   - Navbar: page links on the left, institution logos (Hamilik Okulu, Ahi Evran) plus a `Toplumsal Katkı Koordinatörlüğü` text label on the right; no brand title.
   - 3 hero poster slides.
   - First hero now uses a real visual cover composition with Ahi Evran University and Hamilik Okulu visuals.
-  - Real visual story/gallery section.
   - Partnership band.
-  - Journey/experience narrative section.
   - Program introduction and value map.
   - Animated program info slider.
   - Animated horizontal module carousel.
@@ -229,6 +227,11 @@ AhiEvran/
   - Replaced the `Toplumsal Katkı Koordinatörlüğü` header logo image with a `.katki-text` text label across all active pages; `assets/toplumsal-katki-logo.png` is now unused.
   - Removed the `Hamilik Okulu Kırşehir Programı` brand title from the header on all pages (the name still appears in page copy).
   - Reordered the navbar via CSS `order`/`margin` so page links sit on the left and the institution logos sit on the right (burger stays left on mobile).
+
+- Latest homepage trim and hero fix:
+  - Removed the `home-visual-story` section (visual story/gallery) and the `experience-path` journey section from `index.html`; the partner band and program intro remain.
+  - Fixed clipped descenders on the home hero gradient heading in `assets/home.css` (loosened `line-height` and added bottom padding/negative margin on `.hero h1 .grad`).
+  - The home hero `<h1>` still reads `Hamilik Okulu Kırşehir Programı` (per-word reveal markup); short brand `Kırşehir Hamilik Okulu` is used in the eyebrow, nav, page titles, and copy.
 
 ## Known Constraint
 - The application form is frontend-only. It validates locally and shows a success state, but there is no backend submission endpoint yet.
