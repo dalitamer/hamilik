@@ -233,5 +233,40 @@ AhiEvran/
   - The home hero `<h1>` still reads `Hamilik Okulu Kırşehir Programı` (per-word reveal markup); short brand `Kırşehir Hamilik Okulu` is used in the eyebrow, nav, page titles, and copy.
 
 ## Known Constraint
-- The application form is frontend-only. It validates locally and shows a success state, but there is no backend submission endpoint yet.
+- The participation page currently uses the temporary placeholder URL `https://forms.gle/AbC123KirsehirHamilik`; replace it with the real external application form URL before accepting applications.
+- Participation dates are temporary: application deadline 15 September 2026, interviews 22–24 September 2026, program start 3 October 2026.
+
+## Latest Hamilik Okulu Explainer Redesign (2026-06-20)
+- Replaced the previous multi-section `hamilik-okulu-nedir.html` explainer copy with the user-provided institutional history and purpose.
+- Retained a visual hero using `assets/visual-hamilik-kesif.jpeg`; revised its caption and lead to match the new narrative.
+- New page flow: visual hero, 2012 foundation-purpose story, modernizing ancient values, founders/Ekotek history, independent individual-contribution statement, and official-site CTA.
+- Added a dedicated light-theme `Daha fazla bilgi için` card linking to `https://hamilikokulu.org` in a new tab with safe `noopener noreferrer` attributes.
+- Removed the previous `Resmi kaynaklar`, `Hamilik yaklaşımının özü`, `Vakıf neden kurulmuş?`, and `Kırşehir programındaki karşılığı` content from this page.
+- Added responsive story, founder, independence, and CTA component styles to `assets/info.css`; buttons remain light, with no dark button treatment.
+- Verification: new content/link checks pass, removed-heading checks pass, opening/closing section counts match, and `git diff --check` reports no whitespace errors (only expected Windows line-ending notices).
+- Local HTTP verification: `http://127.0.0.1:8000/hamilik-okulu-nedir.html` returns HTTP 200. A local Python static server was started on port 8000 for this check.
+- In-app browser visual QA was attempted using the required Browser skill, but the browser runtime could not initialize because the session did not provide the required sandbox metadata. Source-level responsive checks remain complete.
+- Immediate next step: visually review the page in a browser when the in-app browser runtime is available; no implementation work remains for this request.
+
+## Initial Participation Page Redesign Request (2026-06-20)
+- Requested scope: strengthen the `Kırşehir Hamilik Okulu` emphasis in the participation hero, replace the hero lead with copy directing visitors to an external form, remove the embedded frontend form, and replace the current three form-completion steps with `Başvuru`, `Mülakat`, and `Program Başlangıcı` milestones with dates.
+- Repository and full git history were searched for `forms.gle` and `docs.google.com/forms`; no external application form URL is present.
+- No application, interview, or program-start dates are present in the repository.
+- GitHub CLI is installed and authenticated for `dalitamer`; remote `origin` is `https://github.com/dalitamer/hamilik.git`.
+- Current worktree also contains the completed, uncommitted Hamilik explainer redesign (`hamilik-okulu-nedir.html`, `assets/info.css`, and this wiki) plus an unrelated untracked `.claude/` directory. The `.claude/` directory must remain excluded from staging.
+- Initial blocker was resolved when the user explicitly authorized temporary random link and date values.
+
+## Participation Page Redesign Completed (2026-06-20)
+- User authorized temporary random values for the missing link and dates.
+- Replaced the small hero eyebrow with a larger, high-emphasis `Kırşehir Hamilik Okulu` program badge and changed the main heading to `Katılım Başvurusu`.
+- Replaced the hero lead with: `Kırşehir Hamilik Okulu'na katılmak için aşağıdaki bağlantıda yer alan başvuru formunu doldurabilirsin.`
+- Removed the embedded application form, success state, old `Başvuru kısa, süreç derinlikli` journey, and the `assets/form.js` validation script.
+- Added two external application CTAs using temporary placeholder `https://forms.gle/AbC123KirsehirHamilik`; links open in a new tab with `noopener noreferrer`.
+- Added a three-step timeline: `Başvuru — 15 Eylül 2026`, `Mülakat — 22–24 Eylül 2026`, `Program Başlangıcı — 3 Ekim 2026`.
+- Added a visible note that both the dates and form link are temporary and must be updated.
+- Rebuilt `assets/form.css` for the new light-theme external-application landing page, responsive timeline, emphasized badge, and visual CTA using `assets/visual-hamilik-basvuru.jpg`.
+- Updated all page-local `#form` header/mobile CTA anchors to `#basvuru` so no broken internal anchor remains.
+- Verification completed: no `<form>` or `assets/form.js` reference remains, two external links are present, all three milestones/dates are present, HTML section tags and CSS braces are balanced, active JavaScript files pass `node --check`, `git diff --check` passes apart from Windows line-ending notices, and local HTTP returns 200 with the new page content.
+- In-app visual QA was attempted with the required Browser skill but could not initialize because this session did not provide the required sandbox metadata.
+- Publish scope: include `katilim-formu.html`, `assets/form.css`, deleted `assets/form.js`, completed Hamilik explainer files (`hamilik-okulu-nedir.html`, `assets/info.css`), and this wiki. Exclude unrelated untracked `.claude/`.
 
