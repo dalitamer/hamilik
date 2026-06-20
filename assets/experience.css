@@ -153,8 +153,7 @@ body::after {
 }
 
 .hero-copy::before,
-.dhero-grid > .reveal::before,
-.fhero .wrap::before {
+.dhero-grid > .reveal::before {
   content: "Kırşehir Hamilik Okulu";
   display: inline-flex;
   align-items: center;
@@ -534,8 +533,7 @@ body::after {
   }
 
   .hero-copy::before,
-  .dhero-grid > .reveal::before,
-  .fhero .wrap::before {
+  .dhero-grid > .reveal::before {
     margin-bottom: 16px;
   }
 

@@ -281,3 +281,7 @@ AhiEvran/
 - User clarified that delivery must be a direct push to `main`, not a pull-request workflow. The existing draft PR will be closed after `main` is updated.
 - Direct-push result: `main` was fast-forwarded and pushed to `origin/main` at commit `a7c0854` (`Simplify contact page`). Draft PR #1 was closed without merging. Untracked `.claude/` remained excluded.
 
+## Participation Hero Duplicate Badge Fix (2026-06-20)
+- Removed `.fhero .wrap::before` from the shared generated-eyebrow selectors in `assets/experience.css`.
+- The participation hero now shows only the larger `.program-badge`; home and program-detail generated labels remain unchanged.
+
