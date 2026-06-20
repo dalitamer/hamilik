@@ -273,3 +273,10 @@ AhiEvran/
 - Draft pull request opened against `main`: `https://github.com/dalitamer/hamilik/pull/1`.
 - GitHub app PR creation returned 404 for this repository, so the authenticated GitHub CLI fallback was used successfully as specified by the publish workflow.
 
+## Contact Page Simplification (2026-06-20)
+- Removed the large `Program ve vakıf iletişim bilgileri` hero, its visual, email/application buttons, and official-source strip from `iletisim.html`.
+- The page now begins directly with `İletişim kanalları` and the copy `Daha fazla bilgi için iletişim bilgileri aşağıdadır.`
+- Added `.contact-intro` spacing and a subtle light background so the remaining contact section clears the fixed navigation cleanly.
+- Existing email, phone, address, application, and official contact cards below the heading remain unchanged.
+- User clarified that delivery must be a direct push to `main`, not a pull-request workflow. The existing draft PR will be closed after `main` is updated.
+
