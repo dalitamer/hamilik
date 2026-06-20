@@ -269,4 +269,7 @@ AhiEvran/
 - Verification completed: no `<form>` or `assets/form.js` reference remains, two external links are present, all three milestones/dates are present, HTML section tags and CSS braces are balanced, active JavaScript files pass `node --check`, `git diff --check` passes apart from Windows line-ending notices, and local HTTP returns 200 with the new page content.
 - In-app visual QA was attempted with the required Browser skill but could not initialize because this session did not provide the required sandbox metadata.
 - Publish scope: include `katilim-formu.html`, `assets/form.css`, deleted `assets/form.js`, completed Hamilik explainer files (`hamilik-okulu-nedir.html`, `assets/info.css`), and this wiki. Exclude unrelated untracked `.claude/`.
+- Publish result: created branch `codex/update-participation-page`, committed implementation as `62d0790` (`Update participation and foundation pages`), and pushed the branch to `origin`.
+- Draft pull request opened against `main`: `https://github.com/dalitamer/hamilik/pull/1`.
+- GitHub app PR creation returned 404 for this repository, so the authenticated GitHub CLI fallback was used successfully as specified by the publish workflow.
 
