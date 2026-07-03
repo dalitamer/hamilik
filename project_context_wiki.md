@@ -309,3 +309,13 @@ AhiEvran/
   - added and pushed this follow-up context update so the wiki reflects the published state,
   - untracked `.claude/` remained excluded.
 
+## Contact Page TKK-Only Cleanup (2026-07-03)
+- User clarified that the contact page must not show Hamilik Okulu content.
+- Removed the Hamilik header logo, `Hamilik Okulu Nedir?` nav/mobile-menu link, Hamilik footer logo, Hamilik footer institutional link, and Hamilik footer copyright/partnership wording from `iletisim.html`.
+- `iletisim.html` now contains no `Hamilik`/`hamilik` text and presents only Kırşehir Ahi Evran Üniversitesi / Toplumsal Katkı Koordinatörlüğü contact context.
+- Verification:
+  - `rg -n "Hamilik|hamilik" iletisim.html` returns no matches,
+  - required TKK email, phone, coordination URL, and university address/contact URL are present,
+  - `git diff --check` passes with only expected CRLF warning,
+  - local HTTP check for `iletisim.html` returned 200.
+
