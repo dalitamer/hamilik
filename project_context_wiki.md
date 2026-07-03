@@ -81,8 +81,8 @@ AhiEvran/
   - Success state.
   - Footer and mobile sticky CTA.
 - `iletisim.html`
-  - New standalone contact page using official Hamilik Okulu contact details.
-  - Includes email, phone numbers, full Istanbul address, official contact page link, institutional links, and social links.
+  - Standalone contact page using Kırşehir Ahi Evran Üniversitesi Toplumsal Katkı Koordinatörlüğü contact details.
+  - Includes `tkk@ahievran.edu.tr`, `0386 271 12 12`, official Toplumsal Katkı Koordinatörlüğü contact link, and Kırşehir Ahi Evran Üniversitesi address/contact link.
 
 ## Report Integration Decision
 - There is **no separate report page** and no active site link to the internal report PDF.
@@ -134,9 +134,10 @@ AhiEvran/
 - Instagram: `https://www.instagram.com/hamilikokulu/`
 - YouTube: `https://www.youtube.com/channel/UCqxZhrKy-96dTs86fPvtr-g?view_as=subscriber`
 - LinkedIn: `https://www.linkedin.com/company/hamilikokulu`
-- Email: `info@hamilikokulu.org`
-- Phones: `0212 217 05 17`, `0212 217 05 16`
-- Address summary: Premier Kampus Ofis, Kağıthane / İstanbul
+- Toplumsal Katkı Koordinatörlüğü email: `tkk@ahievran.edu.tr`
+- Toplumsal Katkı Koordinatörlüğü phone: `0386 271 12 12`
+- Toplumsal Katkı Koordinatörlüğü contact: `https://idari.ahievran.edu.tr/toplumsalkatki/sayfa/Iletisim/tr/2365`
+- Kırşehir Ahi Evran Üniversitesi address/contact: `https://www.ahievran.edu.tr/index.php/iletisim`
 
 ## Removed As Unnecessary
 - `uploads/`: duplicate logos, duplicate PDFs, and pasted image artifacts.
@@ -284,4 +285,22 @@ AhiEvran/
 ## Participation Hero Duplicate Badge Fix (2026-06-20)
 - Removed `.fhero .wrap::before` from the shared generated-eyebrow selectors in `assets/experience.css`.
 - The participation hero now shows only the larger `.program-badge`; home and program-detail generated labels remain unchanged.
+
+## Homepage And Contact Update (2026-07-03)
+- Updated `iletisim.html` from Hamilik Okulu contact details to Kırşehir Ahi Evran Üniversitesi Toplumsal Katkı Koordinatörlüğü details:
+  - email `tkk@ahievran.edu.tr`,
+  - phone `0386 271 12 12`,
+  - coordination contact URL `https://idari.ahievran.edu.tr/toplumsalkatki/sayfa/Iletisim/tr/2365`,
+  - university address/contact URL `https://www.ahievran.edu.tr/index.php/iletisim`.
+- Updated footer contact columns across all active HTML pages to use the same TKK email, phone, and university address/contact link.
+- Removed the homepage `2 Yıllık Yolculuk` timeline section from `index.html`.
+- Removed the homepage `Kurumsal güven, ortak yol.` institution panel from `index.html`.
+- Simplified the first homepage hero visual from a layered multi-image composition to a single `campus-photo` image slot; current fallback source is `assets/visual-ahievran-tanitim.jpg` because the user-attached replacement image was not available as a local file in the workspace.
+- Added responsive `.single-cover` and `.campus-photo` CSS in `assets/home.css` so the hero image remains stable on desktop and mobile.
+- Verification:
+  - old Hamilik contact email/phones/address are absent from active HTML files,
+  - removed homepage headings are absent from active HTML files,
+  - `node --check` passes for active JS files,
+  - `git diff --check` passes with only expected CRLF warnings,
+  - local static HTTP check returned 200 for `index.html` and `iletisim.html`.
 
