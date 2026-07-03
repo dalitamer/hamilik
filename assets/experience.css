@@ -154,7 +154,7 @@ body::after {
 
 .hero-copy::before,
 .dhero-grid > .reveal::before {
-  content: "Kırşehir Hamilik Okulu";
+  content: "Hamilik Okulu Kırşehir";
   display: inline-flex;
   align-items: center;
   width: fit-content;

@@ -319,3 +319,21 @@ AhiEvran/
   - `git diff --check` passes with only expected CRLF warning,
   - local HTTP check for `iletisim.html` returned 200.
 
+## Naming, Application Link, And Hero Completion (2026-07-03)
+- User reiterated four homepage/site requirements:
+  - visible `Kırşehir Hamilik Okulu` wording should become `Hamilik Okulu Kırşehir`,
+  - `Katılım Formu` page/menu naming should become `Katılım Şartları`,
+  - top-right `Başvur` buttons should go directly to the external application link,
+  - homepage hero right-side image composition should be a single campus image, with `2 Yıllık Yolculuk` and `Kurumsal güven, ortak yol.` still removed.
+- Updated visible page titles, nav labels, footer labels, hero labels, and shared generated eyebrow text from `Kırşehir Hamilik Okulu` to `Hamilik Okulu Kırşehir`.
+- Updated visible `Katılım Formu` labels to `Katılım Şartları`; kept the file path `katilim-formu.html` to avoid breaking existing URLs.
+- Updated all header/mobile/sticky `Başvur` buttons to open the external placeholder form `https://forms.gle/AbC123KirsehirHamilik` directly in a new tab with `noopener noreferrer`.
+- Added a new official Kırşehir Ahi Evran Üniversitesi campus-gate asset at `assets/visual-ahievran-campus-hero.jpg`, sourced from the university page `https://www.ahievran.edu.tr/arsiv-haberler/8298-universitemiz-yeni-nizamiye-kapisi-acildi`.
+- Updated the homepage hero image to use `assets/visual-ahievran-campus-hero.jpg`; the user-attached image itself was not available as a local workspace file, so this official image is the closest accessible replacement.
+- Adjusted `.hero-photo.campus-photo` to a 4:3 ratio so the gate signage is not heavily cropped.
+- Verification:
+  - scans found no active `Kırşehir Hamilik Okulu`, `Katılım Formu`, `Katılım Başvurusu`, `2 Yıllık Yolculuk`, or `Kurumsal güven, ortak yol.` strings in HTML/CSS,
+  - `node --check` passes for active JS files,
+  - `git diff --check` passes with only expected CRLF warnings,
+  - local static HTTP check returned 200 for all five HTML pages and the new hero image asset.
+

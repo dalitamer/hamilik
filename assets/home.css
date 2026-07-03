@@ -77,9 +77,9 @@
 }
 .hero-photo.campus-photo {
   width: min(96%, 560px);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   right: 0;
-  top: 28px;
+  top: 54px;
   border-radius: 30px;
 }
 .hero-photo.main-photo::after {
