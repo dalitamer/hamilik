@@ -306,5 +306,6 @@ AhiEvran/
 - Publish result:
   - committed changes on `main` as `903f06b` (`Update homepage and contact details`),
   - pushed `main` to `origin/main`,
+  - added and pushed this follow-up context update so the wiki reflects the published state,
   - untracked `.claude/` remained excluded.
 
