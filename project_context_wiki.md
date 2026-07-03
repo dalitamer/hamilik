@@ -303,4 +303,8 @@ AhiEvran/
   - `node --check` passes for active JS files,
   - `git diff --check` passes with only expected CRLF warnings,
   - local static HTTP check returned 200 for `index.html` and `iletisim.html`.
+- Publish result:
+  - committed changes on `main` as `903f06b` (`Update homepage and contact details`),
+  - pushed `main` to `origin/main`,
+  - untracked `.claude/` remained excluded.
 
