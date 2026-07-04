@@ -337,3 +337,13 @@ AhiEvran/
   - `git diff --check` passes with only expected CRLF warnings,
   - local static HTTP check returned 200 for all five HTML pages and the new hero image asset.
 
+## Contact Nav Restoration (2026-07-04)
+- User reported that `Hamilik Okulu Nedir?` was missing from the top panel on the contact page.
+- Restored `Hamilik Okulu Nedir?` to the desktop and mobile navigation in `iletisim.html`.
+- Kept the contact page body/footer content on Kırşehir Ahi Evran Üniversitesi / Toplumsal Katkı Koordinatörlüğü contact details, per the prior contact requirement.
+- Verification:
+  - `iletisim.html` contains `Hamilik Okulu Nedir?` in both desktop nav and mobile menu,
+  - active HTML/CSS scans found no `Kırşehir Hamilik Okulu`, `Katılım Formu`, `Katılım Başvurusu`, `2 Yıllık Yolculuk`, `Kurumsal güven, ortak yol.`, or old Hamilik contact details,
+  - local HTTP check returned 200 for `iletisim.html`, `hamilik-okulu-nedir.html`, `index.html`, `katilim-formu.html`, and `assets/visual-ahievran-campus-hero.jpg`,
+  - `git diff --check` passed with only the expected CRLF warning.
+
