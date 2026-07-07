@@ -189,15 +189,6 @@
 .flow-step h3 { font-size: 21px; margin-bottom: 8px; }
 .flow-step p { color: var(--muted); font-size: 14.5px; line-height: 1.65; }
 
-/* ---------- UYGULAMA MODELİ ---------- */
-.applymodel { padding: 96px 0; background: var(--green-pale); }
-.am-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 44px; }
-.am-card { background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 30px; transition: 0.3s var(--ease); }
-.am-card:hover { transform: translateY(-6px); box-shadow: var(--sh-md); }
-.am-card .amn { font-family: 'Manrope'; font-weight: 800; font-size: 34px; color: var(--border); line-height: 1; }
-.am-card h3 { font-size: 19px; margin: 14px 0 8px; }
-.am-card p { color: var(--muted); font-size: 14.5px; }
-
 /* ---------- ETKİ ÖLÇÜM (circular) ---------- */
 .impact { padding: 100px 0; background: #fff; overflow: hidden; }
 .impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 30px; }
@@ -219,38 +210,52 @@
 }
 .cycle .cnode .cd { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
 
-/* ---------- REAL VISUALS ---------- */
-.real-visuals { padding: 96px 0 30px; background: #fff; }
-.visual-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 44px; }
-.visual-card {
-  border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; background: var(--paper);
-  box-shadow: var(--sh-sm); transition: 0.3s var(--ease);
+/* ---------- KURUMSAL BİRLİKTELİK (partnership panels) ---------- */
+.partnership-panels { padding: 96px 0 100px; background: #fff; }
+.pp-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; margin-top: 44px; }
+.pp-panel {
+  position: relative; overflow: hidden; border-radius: var(--r-xl); border: 1px solid var(--border);
+  padding: 44px 38px; transition: 0.3s var(--ease); box-shadow: var(--sh-sm);
 }
-.visual-card:hover { transform: translateY(-6px); box-shadow: var(--sh-md); background: #fff; border-color: rgba(0,159,227,0.32); }
-.visual-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; background: var(--sky); }
-.visual-card div { padding: 22px; }
-.visual-card span {
-  color: var(--green-deep); font-family:'Manrope'; font-weight: 800; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+.pp-panel:hover { transform: translateY(-6px); box-shadow: var(--sh-md); }
+.pp-panel.pp-hamilik {
+  background:
+    radial-gradient(520px 320px at 100% 0%, rgba(0,159,227,0.12), transparent 60%),
+    linear-gradient(160deg,#F4FAFF,#fff 60%);
 }
-.visual-card h3 { font-size: 20px; margin: 8px 0 14px; }
-.visual-card a {
-  color: var(--blue-deep); font-family:'Manrope'; font-weight: 800; font-size: 14px;
-  display: inline-flex; align-items: center; gap: 6px;
+.pp-panel.pp-ahievran {
+  background:
+    radial-gradient(520px 320px at 100% 0%, rgba(88,184,50,0.12), transparent 60%),
+    linear-gradient(160deg,var(--green-pale),#fff 60%);
 }
-.visual-card a::after { content:'→'; transition: transform 0.25s var(--ease); }
-.visual-card a:hover::after { transform: translateX(4px); }
-
-/* ---------- DETAIL CTA ---------- */
-.dcta { padding: 30px 0 90px; }
-.dcta-inner { background: var(--grad-cta); background-size: 200% 200%; animation: ctaShift 14s ease infinite; border-radius: var(--r-xl); padding: 70px 56px; text-align: center; color: #fff; position: relative; overflow: hidden; }
-.dcta-inner h2 { color: #fff; font-size: clamp(28px,3.6vw,44px); }
-.dcta-inner p { color: rgba(255,255,255,0.9); margin: 16px auto 30px; max-width: 560px; font-size: 18px; }
-.dcta .btn-white { background: #fff; color: var(--blue-deep); }
+.pp-panel::after {
+  content:''; position: absolute; right: -50px; bottom: -60px; width: 180px; height: 180px; border-radius: 50%;
+  border: 26px solid rgba(0,159,227,0.06);
+}
+.pp-panel.pp-ahievran::after { border-color: rgba(88,184,50,0.08); }
+.pp-logo {
+  width: 76px; height: 76px; border-radius: 22px; background: #fff; border: 1px solid var(--border);
+  display: grid; place-items: center; box-shadow: var(--sh-sm); margin-bottom: 22px; position: relative; z-index: 1;
+}
+.pp-logo img { max-width: 56px; max-height: 56px; object-fit: contain; }
+.pp-panel h3 { font-size: 23px; margin-bottom: 12px; position: relative; z-index: 1; }
+.pp-panel p { color: var(--muted); font-size: 15.5px; line-height: 1.7; position: relative; z-index: 1; }
+.pp-coord {
+  margin-top: 22px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  border: 1px solid rgba(246,180,0,0.3); border-radius: var(--r-lg); padding: 24px 30px;
+  background: linear-gradient(120deg,#FFFBEF,#fff);
+}
+.pp-coord-badge {
+  flex: none; font-family: 'Manrope'; font-weight: 800; font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--gold-deep); background: #FFF6E0; padding: 9px 16px; border-radius: 100px;
+}
+.pp-coord p { color: var(--ink); font-size: 15px; line-height: 1.65; margin: 0; }
+.pp-coord p strong { color: var(--blue-ink); }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 980px) {
   .dhero-grid { grid-template-columns: 1fr; gap: 40px; }
-  .sum-grid, .am-grid, .report-principles, .visual-grid { grid-template-columns: 1fr 1fr; }
+  .sum-grid, .report-principles { grid-template-columns: 1fr 1fr; }
   .report-grid { grid-template-columns: 1fr; }
   .report-media { transform: none; }
   .flow-grid { grid-template-columns: 1fr 1fr; }
@@ -259,11 +264,12 @@
   .cycle { width: 340px; height: 340px; }
   .cycle .ring-dash { width: 290px; height: 290px; }
   .modnav-wrap { top: 74px; }
+  .pp-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .sum-grid, .am-grid, .report-principles, .flow-grid, .visual-grid { grid-template-columns: 1fr; }
+  .sum-grid, .report-principles, .flow-grid { grid-template-columns: 1fr; }
   .report-facts { grid-template-columns: 1fr 1fr; }
-  .report-brief, .report-flow, .real-visuals { padding: 72px 0; }
+  .report-brief, .report-flow, .partnership-panels { padding: 72px 0; }
   .report-media figcaption { position: static; border-radius: 0; max-width: none; box-shadow: none; }
   .md-lessons { grid-template-columns: 1fr; }
   .dhero { padding: calc(var(--nav-h) + 46px) 0 64px; }
@@ -286,5 +292,6 @@
   .modnav-wrap { top: 74px; }
   .md-side, .md-body { padding: 26px; }
   .cycle { width: 290px; height: 290px; transform: scale(0.95); }
-  .dcta-inner { padding: 48px 24px; }
+  .pp-panel { padding: 30px 26px; }
+  .pp-coord { padding: 20px 22px; }
 }

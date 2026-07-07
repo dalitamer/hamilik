@@ -64,14 +64,14 @@
 
   /* ---------- MODULE CAROUSEL ---------- */
   var modules = [
-    { n: 'Modül 0', t: 'Mesleğin İzinde', d: 'Farklı meslek ustalarının tecrübeleriyle mesleğe, sorumluluğa ve insana dair farkındalık kazandıran destekleyici omurga modülü.', c: 'spine' },
-    { n: 'Modül 1', t: 'Mesleki Bilinç', d: 'Tanışma, mesleki farkındalık ve Ahilik ekseninde insan-toplum-meslek ilişkisini kavrama.' },
-    { n: 'Modül 2', t: 'İçimizdeki Anlam Arayışı', d: 'Varlık, yaratılış ve gaye üzerine düşünmeyi açan, fıtrat merkezli içsel bir yolculuk.' },
-    { n: 'Modül 3', t: 'Dünden Bugüne Dünyayı Anlamak', d: 'Tarihsel krizler ve liderlik örnekleriyle dünyayı kavramsal düzeyde okuyabilme.' },
-    { n: 'Modül 4', t: 'Mana ve Mecra', d: 'İnanç, estetik, sanat ve mimari arasındaki anlam ilişkisini keşfetme.' },
-    { n: 'Modül 5', t: 'Dijital Perde', d: 'Dijital dünyanın kimlik, zaman, dikkat ve anlam üzerindeki etkilerini fark ettiren bilinç modülü.' },
-    { n: 'Modül 6', t: 'Duruş ve Değerler', d: 'Karakter, söz ve sorumlulukla inşa edilen dayanıklı bir duruş geliştirme.' },
-    { n: 'Modül 7', t: 'Kapanış ve Etki Takibi', d: 'Mezuniyet, değerlendirme, geri bildirim ve uzun vadeli etki takibiyle yolculuğu tamamlayan kapanış modülü.' }
+    { n: '0. Durak', t: 'Mesleğin İzinde', d: 'Farklı meslek ustalarının tecrübeleriyle mesleğe, sorumluluğa ve insana dair farkındalık kazandıran destekleyici omurga modülü.', c: 'spine' },
+    { n: '1. Durak', t: 'Mesleki Bilinç', d: 'Tanışma, mesleki farkındalık ve Ahilik ekseninde insan-toplum-meslek ilişkisini kavrama.' },
+    { n: '2. Durak', t: 'İçimizdeki Anlam Arayışı', d: 'Varlık, yaratılış ve gaye üzerine düşünmeyi açan, fıtrat merkezli içsel bir yolculuk.' },
+    { n: '3. Durak', t: 'Dünden Bugüne Dünyayı Anlamak', d: 'Tarihsel krizler ve liderlik örnekleriyle dünyayı kavramsal düzeyde okuyabilme.' },
+    { n: '4. Durak', t: 'Mana ve Mecra', d: 'İnanç, estetik, sanat ve mimari arasındaki anlam ilişkisini keşfetme.' },
+    { n: '5. Durak', t: 'Dijital Perde', d: 'Dijital dünyanın kimlik, zaman, dikkat ve anlam üzerindeki etkilerini fark ettiren bilinç modülü.' },
+    { n: '6. Durak', t: 'Duruş ve Değerler', d: 'Karakter, söz ve sorumlulukla inşa edilen dayanıklı bir duruş geliştirme.' },
+    { n: '7. Durak', t: 'Kapanış ve Etki Takibi', d: 'Mezuniyet, değerlendirme, geri bildirim ve uzun vadeli etki takibiyle yolculuğu tamamlayan kapanış modülü.' }
   ];
   var icons = {
     0: '<path d="M3 21V8l9-5 9 5v13M3 21h18M9 21v-6h6v6"/>',

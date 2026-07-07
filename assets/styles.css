@@ -131,10 +131,6 @@ section { position: relative; }
 .brand .ham { height: 40px; }
 .nav.shrink .brand img { height: 42px; }
 .nav.shrink .brand .ham { height: 30px; }
-.brand .x {
-  font-family: 'Manrope'; font-weight: 400; color: var(--border); font-size: 22px;
-  line-height: 1;
-}
 .brand .ahi { height: 62px; }
 .nav.shrink .brand .ahi { height: 48px; }
 .brand .katki-text {
@@ -332,6 +328,5 @@ section { position: relative; }
   .nav.shrink .brand .ahi { height: 34px; }
   .nav.shrink .brand .katki-text { font-size: 9px; max-width: 76px; }
   .brand { gap: 8px; }
-  .brand .x { font-size: 16px; }
   .nav .wrap { gap: 12px; }
 }

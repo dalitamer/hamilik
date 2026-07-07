@@ -336,13 +336,20 @@
 }
 .info-numside .big { font-family: 'Manrope'; font-weight: 800; font-size: 96px; line-height: 1; opacity: 0.96; }
 .info-numside::after { content:''; position: absolute; inset: 0; background: radial-gradient(160px 160px at 30% 20%, rgba(255,255,255,0.25), transparent); }
-.info-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 26px; }
-.info-progress { display: flex; gap: 8px; }
-.info-progress button { width: 30px; height: 5px; border-radius: 4px; border: none; background: var(--border); cursor: pointer; transition: 0.3s; }
+.info-controls {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 26px; padding: 0 56px 40px; box-sizing: border-box; gap: 12px; flex-wrap: wrap;
+}
+.info-progress { display: flex; gap: 8px; flex-wrap: wrap; }
+.info-progress button { width: 30px; height: 5px; border-radius: 4px; border: none; background: var(--border); cursor: pointer; transition: 0.3s; flex: none; }
 .info-progress button.on { background: var(--blue); width: 44px; }
-.info-nav { display: flex; gap: 10px; }
-.info-nav button { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--border); background: #fff; cursor: pointer; color: var(--blue-deep); display: grid; place-items: center; transition: 0.25s var(--ease); }
+.info-nav { display: flex; gap: 10px; flex: none; }
+.info-nav button { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--border); background: #fff; cursor: pointer; color: var(--blue-deep); display: grid; place-items: center; transition: 0.25s var(--ease); flex: none; }
 .info-nav button:hover { box-shadow: var(--sh-md); border-color: var(--blue); }
+@media (max-width: 1100px) {
+  .info-card .panel { padding: 40px; }
+  .info-controls { padding: 0 40px 32px; }
+}
 
 /* ---------- MODULE CAROUSEL ---------- */
 .modules { padding: 110px 0 120px; overflow: hidden; background: #fff; }
@@ -448,6 +455,7 @@
   .info-numside { min-height: 120px; }
   .info-numside .big { font-size: 64px; }
   .info-card .panel { padding: 34px; }
+  .info-controls { padding: 0 34px 30px; }
   .mosaic { grid-template-columns: repeat(2, 1fr); }
   .oc.hero-cell { grid-column: span 2; grid-row: span 1; }
   .partner-text { text-align: center; }
@@ -516,7 +524,10 @@
   .mosaic { grid-template-columns: 1fr; }
   .oc.hero-cell { grid-column: span 1; }
   .cta-inner { padding: 54px 26px; }
+  .info-card .panel { padding: 26px; }
   .info-card .panel h3 { font-size: 24px; }
+  .info-controls { padding: 0 26px 24px; gap: 14px; }
+  .info-nav button { width: 42px; height: 42px; }
   .hero-arrow { display: none; }
   .partner-logos { gap: 18px; }
   .partner-logos .ahi { height: 56px; }

@@ -189,7 +189,7 @@ body::after {
 .sum-card,
 .req,
 .mdcard,
-.am-card,
+.pp-panel,
 .impact-list .il {
   background: rgba(255,255,255,.78);
   border-color: rgba(0,92,168,.12);
@@ -377,7 +377,6 @@ body::after {
 .info-numside,
 .oc.hero-cell,
 .cta-inner,
-.dcta-inner,
 .fpanel {
   background:
     radial-gradient(420px 220px at 88% 12%, rgba(0,159,227,.18), transparent 55%),
@@ -391,8 +390,6 @@ body::after {
 .oc.hero-cell p,
 .cta-inner h2,
 .cta-inner p,
-.dcta-inner h2,
-.dcta-inner p,
 .fpanel h3,
 .fpanel .pintro,
 .fpl span,
@@ -418,8 +415,7 @@ body::after {
   text-underline-offset: 3px;
 }
 
-.cta-inner,
-.dcta-inner {
+.cta-inner {
   box-shadow: var(--sh-xl);
 }
 

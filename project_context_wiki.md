@@ -68,18 +68,17 @@ AhiEvran/
   - 8 rendered module detail cards from `assets/detail.js`.
   - Program structure accordion.
   - Report-derived application flow section.
-  - Application model.
   - Impact/evaluation section.
-  - Real institutional visuals section.
-  - CTA, footer, mobile sticky CTA.
+  - Institutional partnership section (`.partnership-panels`): two logo panels (Hamilik Okulu Vakfı / Kırşehir Ahi Evran Üniversitesi) plus a Toplumsal Katkı Koordinatörlüğü coordination strip — no photo assets, styled with palette gradients only.
+  - Footer, mobile sticky CTA.
+  - Removed: `Program Nasıl Uygulanır?` applymodel section and the closing `dcta` CTA band (client request, 2026-07-07).
 - `katilim-formu.html`
   - Navbar: page links on the left, institution logos (Hamilik Okulu, Ahi Evran) plus a `Toplumsal Katkı Koordinatörlüğü` text label on the right; no brand title.
-  - Application hero.
-  - Application journey section.
-  - Info panel.
-  - Frontend validation form.
-  - Success state.
-  - Footer and mobile sticky CTA.
+  - Application hero with `.fhero-mini` info chips only (no in-hero buttons).
+  - Application timeline (`Başvuru Takvimi`) — unchanged.
+  - `Katılım Şartları` info section (`.participation-conditions`): 5 buttonless eligibility/condition cards (university enrollment, 2-year commitment intent, openness to development, short interview, limited/evaluated capacity).
+  - Footer.
+  - Fixed bottom `Başvur` bar (`.mobile-cta`) is forced visible at all viewport widths on this page only via `body.page-katilim` scoping in `assets/form.css`; footer gets extra bottom padding so it isn't covered.
 - `iletisim.html`
   - Standalone contact page using Kırşehir Ahi Evran Üniversitesi Toplumsal Katkı Koordinatörlüğü contact details.
   - Includes `tkk@ahievran.edu.tr`, `0386 271 12 12`, official Toplumsal Katkı Koordinatörlüğü contact link, and Kırşehir Ahi Evran Üniversitesi address/contact link.
@@ -120,10 +119,10 @@ AhiEvran/
   - `assets/hamilik-logo-header.png`
   - `assets/ahievran-logo-header.png`
   - `assets/toplumsal-katki-logo.png` (temporary placeholder logo)
-  - `assets/visual-hamilik-kesif.jpeg`
-  - `assets/visual-hamilik-basvuru.jpg`
-  - `assets/visual-ahievran-tanitim.jpg`
+  - `assets/visual-hamilik-kesif.jpeg` (used on `hamilik-okulu-nedir.html`)
+  - `assets/visual-ahievran-tanitim.jpg` (used on `program-detayi.html` report-media figure)
   - `assets/visual-ahievran-photo-contest.jpg`
+- `assets/visual-hamilik-basvuru.jpg` is no longer referenced by any active page as of 2026-07-07 (file left in place, unused).
 - No report PDF is kept in the active project tree.
 
 ## Official Links And Contact
@@ -346,4 +345,16 @@ AhiEvran/
   - active HTML/CSS scans found no `Kırşehir Hamilik Okulu`, `Katılım Formu`, `Katılım Başvurusu`, `2 Yıllık Yolculuk`, `Kurumsal güven, ortak yol.`, or old Hamilik contact details,
   - local HTTP check returned 200 for `iletisim.html`, `hamilik-okulu-nedir.html`, `index.html`, `katilim-formu.html`, and `assets/visual-ahievran-campus-hero.jpg`,
   - `git diff --check` passed with only the expected CRLF warning.
+
+## Client Review Notes Implemented (2026-07-07)
+Six annotated client notes were implemented as small, reversible diffs. No git commit was made (per instructions).
+
+1. **Removed `Program Nasıl Uygulanır?` (`.applymodel`)** from `program-detayi.html`. Deleted the section and purged `.applymodel`/`.am-grid`/`.am-card`/`.amn` rules from `assets/detail.css` (including the two responsive grid-column lists that referenced `.am-grid`). Confirmed `assets/detail.js` never referenced these selectors.
+2. **Redesigned `Hamilik Okulu ve Ahi Evran Üniversitesi Birlikteliği`** (`.real-visuals`) into a new buttonless institutional section `.partnership-panels` on `program-detayi.html`: two logo panels (Hamilik Okulu Vakfı / Kırşehir Ahi Evran Üniversitesi, using existing `assets/hamilik-logo.png` / `assets/ahievran-logo.png`) with soft palette gradients, plus a Toplumsal Katkı Koordinatörlüğü coordination strip. New heading `İki Kurumun Ortak Emaneti` and fresh intro copy. Old poster images (`visual-hamilik-kesif.jpeg`, `visual-hamilik-basvuru.jpg`, `visual-ahievran-tanitim.jpg`) are no longer used in this section. Added scoped styles to `assets/detail.css`; removed the old `.real-visuals`/`.visual-grid`/`.visual-card` rules.
+3. **Removed `Program Sana Uygunsa Başvurunu Tamamla` (`.dcta`)** CTA section from `program-detayi.html`; purged `.dcta`/`.dcta-inner` rules (including the mobile `.dcta-inner` padding override) from `assets/detail.css`. Page still ends with the new partnership section before the footer.
+4. **Fixed the info-slider prev/next arrow overflow bug** on `index.html` (`.infoslides` / `#infoPrev` / `#infoNext`). Root cause: `.info-controls` was a direct child of the unstyled `.info-body` wrapper (only `.panel` had `padding: 56px`), so the 46px circular arrow buttons sat flush against the card edge and visually clipped against the card's `border-radius`/`overflow:hidden` at tablet widths. Fix: gave `.info-controls` matching horizontal padding at desktop (`56px`), added a new `max-width:1100px` tier (`40px` padding) for the ~768–1024px tablet range, kept the existing `980px` tier in sync (`34px`), and tightened further at `560px` (`26px` padding, `42px` arrow buttons) in `assets/home.css`. Slide timing/animation untouched.
+5. **Retitled the modules section** on `index.html`: eyebrow → `Program Yolculuğu`, h2 → `Yolculuğun Sekiz Durağı`, intro paragraph replaced with experience-focused copy (`Meslekî bilinçten anlam arayışına...`). Softened the carousel card badges in `assets/home.js` from `Modül N` to `N. Durak` (labels only — the `Detayları Gör` links still build `program-detayi.html#mN` from the array index, unaffected). Marquee speed/animation (`46s` linear) untouched.
+6. **Reworked `katilim-formu.html`**: removed the hero `.hero-application-actions` button pair (kept `.fhero-mini` chips and the `Başvuru Takvimi` timeline as-is); replaced `.external-application` (poster + `Başvuru Formunu Aç` button) with a new buttonless `.participation-conditions` section listing 5 real eligibility conditions sourced from existing site content (Ahi Evran enrollment in hazırlık/1./2. sınıf, 2-year commitment intent, openness to personal/meaning development, short interview, limited/evaluated capacity). Added `body.page-katilim` scoping so the fixed `.mobile-cta` bottom bar is forced visible at all breakpoints on this page only, with extra footer bottom padding so it doesn't cover footer content; no other page's `.mobile-cta` behavior changed. Rebuilt the relevant part of `assets/form.css` (removed `.hero-application-actions`/`.application-link`/`.external-*`/`.application-details` rules, added `.participation-conditions`/`.conditions-grid`/`.condition-item`). `assets/form.js` does not exist (already removed in a prior session); no dead JS found referencing removed elements.
+- Also trimmed now-orphaned `.am-card` / `.dcta-inner` selector references out of the shared `assets/experience.css` theming layer (replaced `.am-card` with `.pp-panel` in the translucent-card rule; dropped `.dcta-inner` from the gradient/shadow rule groups) so no dead selectors remain sitewide.
+- Verification: repo-wide `grep` sweep confirmed zero remaining references to `applymodel`, `am-grid`, `am-card`, `.amn`, `.dcta`, `dcta-inner`, `real-visuals`, `visual-card`, `visual-grid`, `external-application`, `external-card`, `external-visual`, `external-copy`, `application-link`, `application-details`, `hero-application-actions`, and `visual-hamilik-basvuru.jpg` across all HTML/CSS/JS files. No git commit created (per task instructions).
 
