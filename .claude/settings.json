@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "defaultMode": "default",
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(secrets/**)"
+    ],
+    "allow": [
+      "Bash(git status)",
+      "Bash(git --no-pager diff --stat)",
+      "Bash(git --no-pager diff)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git --no-pager log -1 --pretty=format:'%B')",
+      "Bash(git --no-pager log -1 --oneline)",
+      "Bash(git push *)"
+    ]
+  }
+}
