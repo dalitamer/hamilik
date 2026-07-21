@@ -116,6 +116,8 @@
       navBtns.forEach(function (x) { x.classList.remove('on'); });
       b.classList.add('on');
       var go = b.dataset.go;
+      currentGo = go;
+      centerChip(b);
       var cards = container ? container.querySelectorAll('.mdcard') : [];
       if (go === 'all') {
         cards.forEach(function (c) { c.style.display = ''; });
@@ -130,18 +132,83 @@
     });
   });
 
-  /* Highlight nav on scroll */
-  var mdObs = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) {
-        var id = e.target.id;
-        navBtns.forEach(function (x) { x.classList.toggle('on', x.dataset.go === id); });
-      }
+  /* Highlight the active chip and reveal it inside the horizontal strip */
+  var nav = document.getElementById('modnav');
+
+  function centerChip(btn) {
+    if (!nav || !btn) return;
+    /* Only scroll horizontally within the strip; never use scrollIntoView
+       (it can move the whole page vertically and fight the user's scroll). */
+    var navRect = nav.getBoundingClientRect();
+    var btnRect = btn.getBoundingClientRect();
+    var fullyVisible = btnRect.left >= navRect.left && btnRect.right <= navRect.right;
+    if (fullyVisible) return;
+    var current = nav.scrollLeft;
+    var offset = (btnRect.left - navRect.left) - (nav.clientWidth - btn.offsetWidth) / 2;
+    var target = current + offset;
+    var max = nav.scrollWidth - nav.clientWidth;
+    if (target < 0) target = 0;
+    if (target > max) target = max;
+    if (Math.abs(target - current) < 1) return;
+    if (typeof nav.scrollTo === 'function') {
+      nav.scrollTo({ left: target, behavior: 'smooth' });
+    } else {
+      nav.scrollLeft = target;
+    }
+  }
+
+  var currentGo = 'all';
+  function setActive(go) {
+    if (go === currentGo) return;
+    currentGo = go;
+    var active = null;
+    navBtns.forEach(function (x) {
+      var on = x.dataset.go === go;
+      x.classList.toggle('on', on);
+      if (on) active = x;
     });
-  }, { threshold: 0.4, rootMargin: '-130px 0px -50% 0px' });
-  setTimeout(function () {
-    if (container) container.querySelectorAll('.mdcard').forEach(function (c) { mdObs.observe(c); });
-  }, 100);
+    centerChip(active);
+  }
+
+  /* Probe-line scrollspy: the active module is the card crossing a line
+     ~38% down the viewport. This is viewport-independent, so it works for
+     tall mobile cards as well as short desktop cards. When the probe is
+     above the first card the active chip falls back to "Tümü". */
+  function syncScrollspy() {
+    if (!container) return;
+    var cards = container.querySelectorAll('.mdcard');
+    if (!cards.length) return;
+    var probeY = window.innerHeight * 0.38;
+    var chosen = null;
+    var firstTop = null;
+    for (var i = 0; i < cards.length; i++) {
+      var r = cards[i].getBoundingClientRect();
+      if (i === 0) firstTop = r.top;
+      if (r.top <= probeY && r.bottom > probeY) { chosen = cards[i].id; break; }
+      /* Track the last card whose top is above the probe line as a fallback
+         (covers gaps between cards / when past the last card). */
+      if (r.top <= probeY) chosen = cards[i].id;
+    }
+    if (firstTop !== null && firstTop > probeY) {
+      /* Above the first module card: show-all context. */
+      setActive('all');
+      return;
+    }
+    if (chosen) setActive(chosen);
+  }
+
+  var spyScheduled = false;
+  function requestScrollspy() {
+    if (spyScheduled) return;
+    spyScheduled = true;
+    window.requestAnimationFrame(function () {
+      spyScheduled = false;
+      syncScrollspy();
+    });
+  }
+  window.addEventListener('scroll', requestScrollspy, { passive: true });
+  window.addEventListener('resize', requestScrollspy);
+  setTimeout(syncScrollspy, 150);
 
   /* ---- Structure accordion ---- */
   document.querySelectorAll('.struct-item').forEach(function (item) {
@@ -177,7 +244,7 @@
       if (t) {
         var y = t.getBoundingClientRect().top + window.scrollY - 130;
         window.scrollTo({ top: y, behavior: 'smooth' });
-        navBtns.forEach(function (x) { x.classList.toggle('on', '#' + x.dataset.go === location.hash); });
+        setActive(location.hash.slice(1));
       }
     }, 300);
   }
