@@ -2,12 +2,6 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "hamilik-static",
-      "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8765"],
-      "port": 8765
-    },
-    {
       "name": "hamilik-react",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["--prefix", "react-app", "run", "dev"],

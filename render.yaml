@@ -4,12 +4,10 @@ services:
     runtime: static
     repo: https://github.com/dalitamer/hamilik
     branch: main
-    buildCommand: ""
-    staticPublishPath: .
+    rootDir: react-app
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
     routes:
       - type: rewrite
-        source: /program-detayi
-        destination: /program-detayi.html
-      - type: rewrite
-        source: /katilim-formu
-        destination: /katilim-formu.html
+        source: /*
+        destination: /index.html
